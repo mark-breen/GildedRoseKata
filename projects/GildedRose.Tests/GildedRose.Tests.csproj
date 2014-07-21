@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgedBrieTests.cs" />
+    <Compile Include="BackstagePassesTests.cs" />
     <Compile Include="GildedRoseTests.cs" />
     <Compile Include="NormalItemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
