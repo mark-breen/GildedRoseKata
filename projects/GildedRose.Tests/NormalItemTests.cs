@@ -6,9 +6,9 @@ namespace GildedRose.Tests
     [TestFixture]
     class NormalItemTests : GildedRoseTests
     {
-        public override Item CreateItem(int initialSellIn, int initialQuality)
+        public override Item CreateItem(int sellIn, int quality)
         {
-            return new Item { Name = "Normal Item", SellIn = initialSellIn, Quality = initialQuality };
+            return new Item { Name = "Normal Item", SellIn = sellIn, Quality = quality };
         }
 
         [Test]

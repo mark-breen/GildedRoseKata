@@ -6,7 +6,7 @@ namespace GildedRose.Tests
 {
     abstract class GildedRoseTests
     {
-        public abstract Item CreateItem(int initialSellIn, int initialQuality);
+        public abstract Item CreateItem(int sellIn, int quality);
 
         public void UpdateQualityFor(Item item)
         {
