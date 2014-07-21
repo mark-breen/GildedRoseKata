@@ -33,7 +33,7 @@ namespace GildedRose.Tests
 
             UpdateQualityFor(item);
 
-            var expectedItem = CreateItem(initialSellIn - 1, initialQuality);
+            var expectedItem = CreateItem(initialSellIn - 1, 0);
             AssertThatItemsAreEqual(item, expectedItem);
         }
 
@@ -47,6 +47,19 @@ namespace GildedRose.Tests
             UpdateQualityFor(item);
 
             var expectedItem = CreateItem(initialSellIn - 1, initialQuality - 2);
+            AssertThatItemsAreEqual(item, expectedItem);
+        }
+
+        [Test]
+        public void QualityDoesNotBecomeNegativeEvenAfterTheSellByDateHasPassed()
+        {
+            const int initialSellIn = -1;
+            const int initialQuality = 1;
+            var item = CreateItem(initialSellIn, initialQuality);
+
+            UpdateQualityFor(item);
+
+            var expectedItem = CreateItem(initialSellIn - 1, 0);
             AssertThatItemsAreEqual(item, expectedItem);
         }
     }
