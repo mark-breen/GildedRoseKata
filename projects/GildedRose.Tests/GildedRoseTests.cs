@@ -24,5 +24,16 @@ namespace GildedRose.Tests
                 Is.EqualTo(expectedItem.Quality),
                 String.Format("\n{0}\nQuality for {1}", message, expectedItem.Name));
         }
+
+        public void AssertThatQualityIsUpdated(int initialQuality, int expectedQuality,
+            int initialSellIn, int expectedSellIn, string message)
+        {
+            Item item = CreateItem(initialSellIn, initialQuality);
+
+            UpdateQualityFor(item);
+
+            Item expectedItem = CreateItem(expectedSellIn, expectedQuality);
+            AssertThatItemsAreEqual(item, expectedItem, message);
+        }
     }
 }

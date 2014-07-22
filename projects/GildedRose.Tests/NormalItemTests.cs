@@ -15,15 +15,9 @@ namespace GildedRose.Tests
         [TestCase(0, 0, 10, 9, "quality is never negative")]
         [TestCase(20, 18, 0, -1, "quality decreases twice as fast once the sell by date has passed")]
         [TestCase(1, 0, -1, -2, "quality doesn't become negative even after the sell by date has passed")]
-        public void QualityIsUpdated(int initialQuality, int expectedQuality,
-            int initialSellIn, int expectedSellIn, string message)
+        public void QualityIsUpdated(int initialQuality, int expectedQuality, int initialSellIn, int expectedSellIn, string message)
         {
-            var item = CreateItem(initialSellIn, initialQuality);
-
-            UpdateQualityFor(item);
-
-            var expectedItem = CreateItem(expectedSellIn, expectedQuality);
-            AssertThatItemsAreEqual(item, expectedItem, message);
+            AssertThatQualityIsUpdated(initialQuality, expectedQuality, initialSellIn, expectedSellIn, message);
         }
     }
 }

@@ -12,15 +12,9 @@ namespace GildedRose.Tests
         }
 
         [TestCase(20, 20, 10, 10, "quality and sell in always stay the same")]
-        public void QualityIsUpdated(int initialQuality, int expectedQuality,
-            int initialSellIn, int expectedSellIn, string message)
+        public void QualityIsUpdated(int initialQuality, int expectedQuality, int initialSellIn, int expectedSellIn, string message)
         {
-            var item = CreateItem(initialSellIn, initialQuality);
-
-            UpdateQualityFor(item);
-
-            var expectedItem = CreateItem(expectedSellIn, expectedQuality);
-            AssertThatItemsAreEqual(item, expectedItem, message);
+            AssertThatQualityIsUpdated(initialQuality, expectedQuality, initialSellIn, expectedSellIn, message);
         }
     }
 }
