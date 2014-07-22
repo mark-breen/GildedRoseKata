@@ -13,12 +13,6 @@ namespace GildedRose.Tests
             new Program(item).UpdateQuality();
         }
 
-        public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem)
-        {
-            AssertThatItemsAreEqual(actualItem, expectedItem, "");
-        }
-
-
         public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem, string message)
         {
             message = message.ToUpper();
