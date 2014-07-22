@@ -25,6 +25,19 @@ namespace GildedRose.Tests
         }
 
         [Test]
+        public void QualityIncreasesTwiceAsFastAfterTheSellByDateHasPassed()
+        {
+            const int initialSellIn = -1;
+            const int initialQuality = 10;
+            var item = CreateItem(initialSellIn, initialQuality);
+
+            UpdateQualityFor(item);
+
+            var expectedItem = CreateItem(initialSellIn - 1, initialQuality + 2);
+            AssertThatItemsAreEqual(item, expectedItem);
+        }
+
+        [Test]
         public void QualityIsNeverMoreThan50()
         {
             const int initialSellIn = 10;
