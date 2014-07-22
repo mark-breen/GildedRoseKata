@@ -11,56 +11,19 @@ namespace GildedRose.Tests
             return new Item { Name = "Normal Item", SellIn = sellIn, Quality = quality };
         }
 
-        [Test]
-        public void QualityDecreasesEachDay()
+        [TestCase(20, 19, 10, 9, "quality decreases each day")]
+        [TestCase(0, 0, 10, 9, "quality is never negative")]
+        [TestCase(20, 18, 0, -1, "quality decreases twice as fast once the sell by date has passed")]
+        [TestCase(1, 0, -1, -2, "quality doesn't become negative even after the sell by date has passed")]
+        public void QualityIsUpdated(int initialQuality, int expectedQuality,
+            int initialSellIn, int expectedSellIn, string message)
         {
-            const int initialSellIn = 10;
-            const int initialQuality = 20;
             var item = CreateItem(initialSellIn, initialQuality);
 
             UpdateQualityFor(item);
 
-            var expectedItem = CreateItem(initialSellIn - 1, initialQuality - 1);
-            AssertThatItemsAreEqual(item, expectedItem);
-        }
-
-        [Test]
-        public void QualityIsNeverNegative()
-        {
-            const int initialSellIn = 10;
-            const int initialQuality = 0;
-            var item = CreateItem(initialSellIn, initialQuality);
-
-            UpdateQualityFor(item);
-
-            var expectedItem = CreateItem(initialSellIn - 1, 0);
-            AssertThatItemsAreEqual(item, expectedItem);
-        }
-
-        [Test]
-        public void QualityDecreasesTwiceAsFastOnceSellByDateHasPassed()
-        {
-            const int initialSellIn = 0;
-            const int initialQuality = 20;
-            var item = CreateItem(initialSellIn, initialQuality);
-
-            UpdateQualityFor(item);
-
-            var expectedItem = CreateItem(initialSellIn - 1, initialQuality - 2);
-            AssertThatItemsAreEqual(item, expectedItem);
-        }
-
-        [Test]
-        public void QualityDoesNotBecomeNegativeEvenAfterTheSellByDateHasPassed()
-        {
-            const int initialSellIn = -1;
-            const int initialQuality = 1;
-            var item = CreateItem(initialSellIn, initialQuality);
-
-            UpdateQualityFor(item);
-
-            var expectedItem = CreateItem(initialSellIn - 1, 0);
-            AssertThatItemsAreEqual(item, expectedItem);
+            var expectedItem = CreateItem(expectedSellIn, expectedQuality);
+            AssertThatItemsAreEqual(item, expectedItem, message);
         }
     }
 }
