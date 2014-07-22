@@ -180,3 +180,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Coverage data
+OpenCover/
+
