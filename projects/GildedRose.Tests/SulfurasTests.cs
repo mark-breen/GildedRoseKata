@@ -4,24 +4,23 @@ using NUnit.Framework;
 namespace GildedRose.Tests
 {
     [TestFixture]
-    class SulfurasTests : GildedRoseTests
+    internal class SulfurasTests : GildedRoseTests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
             return new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellIn, Quality = quality };
         }
 
-        [Test]
-        public void QualityAndSellInAlwaysStayTheSame()
+        [TestCase(20, 20, 10, 10, "quality and sell in always stay the same")]
+        public void QualityIsUpdated(int initialQuality, int expectedQuality,
+            int initialSellIn, int expectedSellIn, string message)
         {
-            const int initialSellIn = 10;
-            const int initialQuality = 20;
             var item = CreateItem(initialSellIn, initialQuality);
 
             UpdateQualityFor(item);
 
-            var expectedItem = CreateItem(initialSellIn, initialQuality);
-            AssertThatItemsAreEqual(item, expectedItem);
+            var expectedItem = CreateItem(expectedSellIn, expectedQuality);
+            AssertThatItemsAreEqual(item, expectedItem, message);
         }
     }
 }
