@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace GildedRose.Tests
 {
     [TestFixture]
-    internal class SulfurasTests : GildedRoseTests
+    class SulfurasTests : GildedRoseTests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
