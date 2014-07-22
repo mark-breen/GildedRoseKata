@@ -15,13 +15,20 @@ namespace GildedRose.Tests
 
         public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem)
         {
+            AssertThatItemsAreEqual(actualItem, expectedItem, "");
+        }
+
+
+        public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem, string message)
+        {
+            message = message.ToUpper();
             Assert.That(actualItem.SellIn,
                 Is.EqualTo(expectedItem.SellIn),
-                String.Format("SellIn for {0}", expectedItem.Name));
+                String.Format("\n{0}\nSellIn for {1}", message, expectedItem.Name));
 
             Assert.That(actualItem.Quality,
                 Is.EqualTo(expectedItem.Quality),
-                String.Format("Quality for {0}", expectedItem.Name));
+                String.Format("\n{0}\nQuality for {1}", message, expectedItem.Name));
         }
     }
 }
