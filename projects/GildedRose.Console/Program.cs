@@ -59,12 +59,9 @@ namespace GildedRose.Console
                 if (item.SellIn < 11) IncreaseQualityFor(item);
                 if (item.SellIn < 6) IncreaseQualityFor(item);
             }
-            else
+            else if (item.Name != "Sulfuras, Hand of Ragnaros")
             {
-                if (item.Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    DecreaseQualityFor(item);
-                }
+                DecreaseQualityFor(item);
             }
 
             if (item.Name != "Sulfuras, Hand of Ragnaros")
