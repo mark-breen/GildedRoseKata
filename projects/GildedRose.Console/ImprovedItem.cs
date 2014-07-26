@@ -11,5 +11,10 @@
         {
             Quality = 0;
         }
+
+        public void IncreaseQuality()
+        {
+            if (Quality < 50) Quality++;
+        }
     }
 }

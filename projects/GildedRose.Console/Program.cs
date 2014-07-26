@@ -79,7 +79,7 @@ namespace GildedRose.Console
 
         private void IncreaseQualityFor(ImprovedItem item)
         {
-            if (item.Quality < 50) item.Quality++;
+            item.IncreaseQuality();
         }
 
         private void DecreaseQualityFor(ImprovedItem item)
