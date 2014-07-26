@@ -57,7 +57,7 @@ namespace GildedRose.Console
             if (item.Name == "Aged Brie")
             {
                 IncreaseQualityFor(item);
-                DecreaseSellInFor(item);
+                item.DecreaseSellIn();
                 if (item.SellIn < 0) IncreaseQualityFor(item);
                 return;
             }
@@ -67,19 +67,14 @@ namespace GildedRose.Console
                 IncreaseQualityFor(item);
                 if (item.SellIn < 11) IncreaseQualityFor(item);
                 if (item.SellIn < 6) IncreaseQualityFor(item);
-                DecreaseSellInFor(item);
+                item.DecreaseSellIn();
                 if (item.SellIn < 0) DropQualityFor(item);
                 return;
             }
 
             DecreaseQualityFor(item);
-            DecreaseSellInFor(item);
-            if (item.SellIn < 0) DecreaseQualityFor(item);
-        }
-
-        private void DecreaseSellInFor(ImprovedItem item)
-        {
             item.DecreaseSellIn();
+            if (item.SellIn < 0) DecreaseQualityFor(item);
         }
 
         private void DropQualityFor(ImprovedItem item)
