@@ -68,18 +68,13 @@ namespace GildedRose.Console
                 if (item.SellIn < 11) IncreaseQualityFor(item);
                 if (item.SellIn < 6) IncreaseQualityFor(item);
                 item.DecreaseSellIn();
-                if (item.SellIn < 0) DropQualityFor(item);
+                if (item.SellIn < 0) item.DropQuality();
                 return;
             }
 
             DecreaseQualityFor(item);
             item.DecreaseSellIn();
             if (item.SellIn < 0) DecreaseQualityFor(item);
-        }
-
-        private void DropQualityFor(ImprovedItem item)
-        {
-            item.DropQuality();
         }
 
         private void IncreaseQualityFor(ImprovedItem item)
