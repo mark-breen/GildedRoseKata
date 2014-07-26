@@ -85,7 +85,7 @@ namespace GildedRose.Console
                     }
                     else
                     {
-                        item.Quality = 0;
+                        DropQualityFor(item);
                     }
                 }
                 else
@@ -93,6 +93,11 @@ namespace GildedRose.Console
                     IncreaseQualityFor(item);
                 }
             }
+        }
+
+        private void DropQualityFor(Item item)
+        {
+            item.Quality = 0;
         }
 
         private void IncreaseQualityFor(Item item)
