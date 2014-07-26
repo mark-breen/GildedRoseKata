@@ -69,7 +69,7 @@ namespace GildedRose.Console
 
             if (item.Name != "Sulfuras, Hand of Ragnaros")
             {
-                item.SellIn = item.SellIn - 1;
+                DecreaseSellInFor(item);
             }
 
             if (item.SellIn < 0)
@@ -93,6 +93,11 @@ namespace GildedRose.Console
                     IncreaseQualityFor(item);
                 }
             }
+        }
+
+        private void DecreaseSellInFor(Item item)
+        {
+            item.SellIn = item.SellIn - 1;
         }
 
         private void DropQualityFor(Item item)
