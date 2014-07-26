@@ -52,12 +52,6 @@ namespace GildedRose.Console
             if (item.Name == "Aged Brie")
             {
                 IncreaseQualityFor(item);
-
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (item.SellIn < 11) IncreaseQualityFor(item);
-                    if (item.SellIn < 6) IncreaseQualityFor(item);
-                }
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
