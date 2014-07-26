@@ -5,7 +5,7 @@ namespace GildedRose.Console
     using System.Collections.Generic;
     using System;
 
-    public class Program
+    public class Inventory
     {
         static IList<Item> Items;
         static void Main()

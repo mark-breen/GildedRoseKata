@@ -49,7 +49,7 @@
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\NormalItem.cs" />
     <Compile Include="Items\Sulfuras.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -96,7 +96,7 @@ namespace GildedRose.Tests
         {
             var item = CreateItem(initialSellIn, initialQuality);
 
-            Program.UpdateQualityFor(item);
+            Inventory.UpdateQualityFor(item);
 
             var expectedItem = CreateItem(expectedSellIn, expectedQuality);
             AssertThatItemsAreEqual(item, expectedItem, message);
