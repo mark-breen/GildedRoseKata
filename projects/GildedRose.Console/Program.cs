@@ -54,14 +54,6 @@ namespace GildedRose.Console
         {
             item.UpdateQuality();
 
-            if (item.Name == "Aged Brie")
-            {
-                item.IncreaseQuality();
-                item.DecreaseSellIn();
-                if (item.IsExpired) item.IncreaseQuality();
-                return;
-            }
-
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 item.IncreaseQuality();
