@@ -2,9 +2,7 @@
 {
     public abstract class ImprovedItem : Item
     {
-        public ImprovedItem() { }
-
-        public ImprovedItem(string name, int sellIn, int quality)
+        protected ImprovedItem(string name, int sellIn, int quality)
         {
             Name = name;
             SellIn = sellIn;
