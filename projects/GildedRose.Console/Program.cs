@@ -58,10 +58,7 @@ namespace GildedRose.Console
             {
                 item.IncreaseQuality();
                 item.DecreaseSellIn();
-                if (item.SellIn < 0)
-                {
-                    item.IncreaseQuality();
-                }
+                if (item.SellIn < 0) item.IncreaseQuality();
                 return;
             }
 
