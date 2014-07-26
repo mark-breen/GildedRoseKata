@@ -3,7 +3,7 @@
     public class AgedBrie : ImprovedItem
     {
         public AgedBrie(int sellIn, int quality) :
-            base(name: "Aged Brie", sellIn: sellIn, quality: quality) { }
+            base("Aged Brie", sellIn, quality) { }
 
         public override void UpdateQuality()
         {

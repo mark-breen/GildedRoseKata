@@ -3,7 +3,7 @@
     public class BackstagePasses : ImprovedItem
     {
         public BackstagePasses(int sellIn, int quality) :
-            base(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: sellIn, quality: quality) { }
+            base("Backstage passes to a TAFKAL80ETC concert", sellIn, quality) { }
 
         public override void UpdateQuality()
         {

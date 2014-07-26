@@ -2,7 +2,8 @@
 {
     public class NormalItem : ImprovedItem
     {
-        public NormalItem(string name, int sellIn, int quality) : base(name, sellIn, quality) { }
+        public NormalItem(string name, int sellIn, int quality) :
+            base(name, sellIn, quality) { }
 
         public override void UpdateQuality()
         {
