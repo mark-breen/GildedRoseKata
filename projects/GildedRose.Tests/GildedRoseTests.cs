@@ -27,7 +27,7 @@ namespace GildedRose.Tests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
-            return new ImprovedItem { Name = "Aged Brie", SellIn = sellIn, Quality = quality };
+            return new AgedBrie(sellIn: sellIn, quality: quality);
         }
 
         [TestCase(20, 21, 10, 9, "quality increases each day")]
