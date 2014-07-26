@@ -2,6 +2,9 @@
 {
     public abstract class ImprovedItem : Item
     {
+        private const int MinimumQuality = 0;
+        private const int MaximumQuality = 50;
+
         protected ImprovedItem(string name, int sellIn, int quality)
         {
             Name = name;
@@ -16,17 +19,17 @@
 
         public void DropQuality()
         {
-            Quality = 0;
+            Quality = MinimumQuality;
         }
 
         public void IncreaseQuality()
         {
-            if (Quality < 50) Quality++;
+            if (Quality < MaximumQuality) Quality++;
         }
 
         public void DecreaseQuality()
         {
-            if (Quality > 0) Quality--;
+            if (Quality > MinimumQuality) Quality--;
         }
 
         public bool IsExpired
