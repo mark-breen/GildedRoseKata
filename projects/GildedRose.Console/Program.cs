@@ -8,7 +8,6 @@
         static IList<Item> Items;
         static void Main()
         {
-
             Console.WriteLine("OMGHAI!");
 
             Items = new List<Item>
