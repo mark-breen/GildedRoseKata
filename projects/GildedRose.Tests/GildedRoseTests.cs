@@ -98,11 +98,11 @@ namespace GildedRose.Tests
         public void AssertThatQualityIsUpdated(int initialQuality, int expectedQuality,
             int initialSellIn, int expectedSellIn, string message)
         {
-            Item item = CreateItem(initialSellIn, initialQuality);
+            var item = CreateItem(initialSellIn, initialQuality);
 
             UpdateQualityFor(item);
 
-            Item expectedItem = CreateItem(expectedSellIn, expectedQuality);
+            var expectedItem = CreateItem(expectedSellIn, expectedQuality);
             AssertThatItemsAreEqual(item, expectedItem, message);
         }
     }
