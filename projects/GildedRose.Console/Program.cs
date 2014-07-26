@@ -17,12 +17,7 @@ namespace GildedRose.Console
                                               new AgedBrie(sellIn: 2, quality: 0),
                                               new NormalItem(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
                                               new Sulfuras(sellIn: 0, quality: 80),
-                                              new ImprovedItem
-                                                  {
-                                                      Name = "Backstage passes to a TAFKAL80ETC concert",
-                                                      SellIn = 15,
-                                                      Quality = 20
-                                                  },
+                                              new BackstagePasses (sellIn: 15, quality: 20),
                                               new ImprovedItem {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
                                           }
 

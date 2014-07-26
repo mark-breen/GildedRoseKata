@@ -60,7 +60,7 @@ namespace GildedRose.Tests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
-            return new ImprovedItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellIn, Quality = quality };
+            return new BackstagePasses(sellIn: sellIn, quality: quality);
         }
 
         [TestCase(20, 21, 11, 10, "quality increases normally more than 10 days before the concert")]
