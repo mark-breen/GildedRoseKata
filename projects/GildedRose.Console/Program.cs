@@ -97,7 +97,7 @@ namespace GildedRose.Console
 
         private void DecreaseSellInFor(Item item)
         {
-            item.SellIn = item.SellIn - 1;
+            item.SellIn--;
         }
 
         private void DropQualityFor(Item item)
@@ -117,7 +117,7 @@ namespace GildedRose.Console
         {
             if (item.Quality > 0)
             {
-                item.Quality = item.Quality - 1;
+                item.Quality--;
             }
         }
     }
