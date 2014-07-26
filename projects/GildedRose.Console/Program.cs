@@ -18,7 +18,7 @@
                 new NormalItem(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
                 new Sulfuras(sellIn: 0, quality: 80),
                 new BackstagePasses(sellIn: 15, quality: 20),
-                new ImprovedItem {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                new ConjuredItem(sellIn: 3, quality: 6)
             };
 
             UpdateQuality();

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AgedBrie.cs" />
     <Compile Include="BackstagePasses.cs" />
+    <Compile Include="ConjuredItem.cs" />
     <Compile Include="ImprovedItem.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="NormalItem.cs" />
