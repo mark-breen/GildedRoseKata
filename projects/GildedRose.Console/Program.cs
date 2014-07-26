@@ -49,6 +49,8 @@ namespace GildedRose.Console
 
         public void UpdateQualityFor(Item item)
         {
+            if (item.Name == "Sulfuras, Hand of Ragnaros") return;
+
             if (item.Name == "Aged Brie")
             {
                 IncreaseQualityFor(item);
@@ -62,9 +64,6 @@ namespace GildedRose.Console
                 if (item.SellIn < 6) IncreaseQualityFor(item);
                 DecreaseSellInFor(item);
                 if (item.SellIn < 0) DropQualityFor(item);
-            }
-            else if (item.Name == "Sulfuras, Hand of Ragnaros")
-            {
             }
             else
             {
