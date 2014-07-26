@@ -49,7 +49,17 @@ namespace GildedRose.Console
 
         public void UpdateQualityFor(Item item)
         {
-            if (item.Name == "Aged Brie" || item.Name == "Backstage passes to a TAFKAL80ETC concert")
+            if (item.Name == "Aged Brie")
+            {
+                IncreaseQualityFor(item);
+
+                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    if (item.SellIn < 11) IncreaseQualityFor(item);
+                    if (item.SellIn < 6) IncreaseQualityFor(item);
+                }
+            }
+            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 IncreaseQualityFor(item);
 
