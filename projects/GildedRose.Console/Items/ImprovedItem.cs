@@ -24,7 +24,7 @@
             SellIn--;
         }
 
-        public void IncreaseQuality()
+        public virtual void IncreaseQuality()
         {
             if (Quality < MaximumQuality) Quality++;
         }
@@ -34,7 +34,7 @@
             Quality = MinimumQuality;
         }
 
-        public void DecreaseQuality()
+        public virtual void DecreaseQuality()
         {
             if (Quality > MinimumQuality) Quality--;
         }
