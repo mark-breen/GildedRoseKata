@@ -48,16 +48,6 @@ namespace GildedRose.Console
         public void UpdateQualityFor(ImprovedItem item)
         {
             item.UpdateQuality();
-
-            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-            {
-                item.IncreaseQuality();
-                if (item.SellIn <= 10) item.IncreaseQuality();
-                if (item.SellIn <= 5) item.IncreaseQuality();
-                item.DecreaseSellIn();
-                if (item.IsExpired) item.DropQuality();
-                return;
-            }
         }
     }
 }
