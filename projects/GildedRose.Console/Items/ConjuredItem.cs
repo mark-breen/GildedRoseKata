@@ -7,6 +7,15 @@
 
         public override void UpdateQuality()
         {
+            DecreaseQuality();
+            DecreaseSellIn();
+            if (IsExpired) DecreaseQuality();
+        }
+
+        private new void DecreaseQuality()
+        {
+            base.DecreaseQuality();
+            base.DecreaseQuality();
         }
     }
 }
