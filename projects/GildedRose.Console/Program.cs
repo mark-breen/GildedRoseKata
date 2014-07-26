@@ -1,4 +1,6 @@
-﻿namespace GildedRose.Console
+﻿using GildedRose.Console.Items;
+
+namespace GildedRose.Console
 {
     using System.Collections.Generic;
     using System;

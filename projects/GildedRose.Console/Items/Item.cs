@@ -1,4 +1,4 @@
-namespace GildedRose.Console
+namespace GildedRose.Console.Items
 {
     public class Item
     {
