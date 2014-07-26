@@ -94,14 +94,4 @@ namespace GildedRose.Console
             if (item.Quality > 0) item.Quality--;
         }
     }
-
-    public class Item
-    {
-        public string Name { get; set; }
-
-        public int SellIn { get; set; }
-
-        public int Quality { get; set; }
-    }
-
 }
