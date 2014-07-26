@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GildedRose.Console
+﻿namespace GildedRose.Console
 {
+    using System.Collections.Generic;
+    using System;
+
     public class Program
     {
         static IList<Item> Items;
         static void Main()
         {
-            System.Console.WriteLine("OMGHAI!");
+
+            Console.WriteLine("OMGHAI!");
 
             Items = new List<Item>
             {
@@ -22,7 +23,7 @@ namespace GildedRose.Console
 
             UpdateQuality();
 
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
 
         public Program() { }
