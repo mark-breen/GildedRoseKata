@@ -70,23 +70,20 @@ namespace GildedRose.Console
                 DecreaseSellInFor(item);
             }
 
-            if (item.SellIn < 0)
+            if (item.Name == "Aged Brie")
             {
-                if (item.Name == "Aged Brie")
-                {
-                    IncreaseQualityFor(item);
-                }
-                else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    DropQualityFor(item);
-                }
-                else if (item.Name == "Sulfuras, Hand of Ragnaros")
-                {
-                }
-                else
-                {
-                    DecreaseQualityFor(item);
-                }
+                if (item.SellIn < 0) IncreaseQualityFor(item);
+            }
+            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+            {
+                if (item.SellIn < 0) DropQualityFor(item);
+            }
+            else if (item.Name == "Sulfuras, Hand of Ragnaros")
+            {
+            }
+            else
+            {
+                if (item.SellIn < 0) DecreaseQualityFor(item);
             }
         }
 
