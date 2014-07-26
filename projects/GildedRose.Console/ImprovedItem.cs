@@ -2,6 +2,15 @@
 {
     public class ImprovedItem : Item
     {
+        public ImprovedItem() { }
+
+        public ImprovedItem(string name, int sellIn, int quality)
+        {
+            Name = name;
+            SellIn = sellIn;
+            Quality = quality;
+        }
+
         public void DecreaseSellIn()
         {
             SellIn--;
