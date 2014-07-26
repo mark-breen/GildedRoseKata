@@ -65,8 +65,8 @@ namespace GildedRose.Console
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 item.IncreaseQuality();
-                if (item.SellIn < 11) item.IncreaseQuality();
-                if (item.SellIn < 6) item.IncreaseQuality();
+                if (item.SellIn <= 10) item.IncreaseQuality();
+                if (item.SellIn <= 5) item.IncreaseQuality();
                 item.DecreaseSellIn();
                 if (item.IsExpired) item.DropQuality();
                 return;
