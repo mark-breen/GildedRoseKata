@@ -12,7 +12,6 @@ namespace GildedRose.Console
         {
             AddItemsToInventory();
             UpdateQualityForAllItemsInInventory();
-            Console.ReadKey();
         }
 
         private static void AddItemsToInventory()
