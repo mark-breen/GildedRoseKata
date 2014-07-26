@@ -56,8 +56,10 @@ namespace GildedRose.Console
                 IncreaseQualityFor(item);
                 DecreaseSellInFor(item);
                 if (item.SellIn < 0) IncreaseQualityFor(item);
+                return;
             }
-            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+
+            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 IncreaseQualityFor(item);
                 if (item.SellIn < 11) IncreaseQualityFor(item);
