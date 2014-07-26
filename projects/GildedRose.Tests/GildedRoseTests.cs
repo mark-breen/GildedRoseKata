@@ -79,11 +79,6 @@ namespace GildedRose.Tests
     {
         public abstract ImprovedItem CreateItem(int sellIn, int quality);
 
-        public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem, string message)
-        {
-            Assert.That(actualItem, Is.EqualTo(expectedItem), message.ToUpper());
-        }
-
         public void AssertThatQualityIsUpdated(int initialQuality, int expectedQuality,
             int initialSellIn, int expectedSellIn, string message)
         {
@@ -92,7 +87,7 @@ namespace GildedRose.Tests
             Inventory.UpdateQualityFor(item);
 
             var expectedItem = CreateItem(expectedSellIn, expectedQuality);
-            AssertThatItemsAreEqual(item, expectedItem, message);
+            Assert.That(item, Is.EqualTo(expectedItem), message.ToUpper());
         }
     }
 }
