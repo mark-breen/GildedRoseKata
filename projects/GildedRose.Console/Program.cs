@@ -13,17 +13,17 @@ namespace GildedRose.Console
             {
                 Items = new List<Item>
                                           {
-                                              new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
-                                              new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
-                                              new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                                              new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
-                                              new Item
+                                              new ImprovedItem {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                                              new ImprovedItem {Name = "Aged Brie", SellIn = 2, Quality = 0},
+                                              new ImprovedItem {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                                              new ImprovedItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                                              new ImprovedItem
                                                   {
                                                       Name = "Backstage passes to a TAFKAL80ETC concert",
                                                       SellIn = 15,
                                                       Quality = 20
                                                   },
-                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                                              new ImprovedItem {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
                                           }
 
             };
@@ -74,22 +74,22 @@ namespace GildedRose.Console
             if (item.SellIn < 0) DecreaseQualityFor(item);
         }
 
-        private void DecreaseSellInFor(Item item)
+        private void DecreaseSellInFor(ImprovedItem item)
         {
             item.SellIn--;
         }
 
-        private void DropQualityFor(Item item)
+        private void DropQualityFor(ImprovedItem item)
         {
             item.Quality = 0;
         }
 
-        private void IncreaseQualityFor(Item item)
+        private void IncreaseQualityFor(ImprovedItem item)
         {
             if (item.Quality < 50) item.Quality++;
         }
 
-        private void DecreaseQualityFor(Item item)
+        private void DecreaseQualityFor(ImprovedItem item)
         {
             if (item.Quality > 0) item.Quality--;
         }
