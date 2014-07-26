@@ -13,9 +13,9 @@ namespace GildedRose.Console
             {
                 Items = new List<Item>
                                           {
-                                              new ImprovedItem {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                                              new NormalItem(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
                                               new ImprovedItem {Name = "Aged Brie", SellIn = 2, Quality = 0},
-                                              new ImprovedItem {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                                              new NormalItem(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
                                               new Sulfuras(sellIn: 0, quality: 80),
                                               new ImprovedItem
                                                   {

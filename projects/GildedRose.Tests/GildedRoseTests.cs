@@ -9,7 +9,7 @@ namespace GildedRose.Tests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
-            return new ImprovedItem { Name = "Normal Item", SellIn = sellIn, Quality = quality };
+            return new NormalItem(name: "Normal Item", sellIn: sellIn, quality: quality);
         }
 
         [TestCase(20, 19, 10, 9, "quality decreases each day")]
