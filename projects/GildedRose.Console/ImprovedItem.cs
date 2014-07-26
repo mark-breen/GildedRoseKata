@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Console
 {
-    public class ImprovedItem : Item
+    public abstract class ImprovedItem : Item
     {
         public ImprovedItem() { }
 
@@ -36,6 +36,6 @@
             get { return SellIn < 0; }
         }
 
-        public virtual void UpdateQuality() { }
+        public abstract void UpdateQuality();
     }
 }
