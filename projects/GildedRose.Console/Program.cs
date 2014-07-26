@@ -26,13 +26,6 @@
             Console.ReadKey();
         }
 
-        public Program() { }
-
-        public Program(Item item)
-        {
-            Items = new List<Item> { item };
-        }
-
         public static void UpdateQuality()
         {
             foreach (var item in Items)
