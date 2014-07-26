@@ -79,7 +79,7 @@ namespace GildedRose.Console
 
         private bool IsExpired(ImprovedItem item)
         {
-            return item.SellIn < 0;
+            return item.IsExpired;
         }
     }
 }

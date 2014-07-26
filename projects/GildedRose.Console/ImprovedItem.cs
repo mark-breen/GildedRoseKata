@@ -21,5 +21,10 @@
         {
             if (Quality > 0) Quality--;
         }
+
+        public bool IsExpired
+        {
+            get { return SellIn < 0; }
+        }
     }
 }
