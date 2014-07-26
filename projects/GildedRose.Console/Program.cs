@@ -73,10 +73,6 @@ namespace GildedRose.Console
                 if (item.IsExpired) item.DropQuality();
                 return;
             }
-
-            item.DecreaseQuality();
-            item.DecreaseSellIn();
-            if (item.IsExpired) item.DecreaseQuality();
         }
     }
 }
