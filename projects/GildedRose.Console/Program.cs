@@ -6,7 +6,7 @@ namespace GildedRose.Console
     public class Program
     {
         static IList<Item> Items;
-        static void Main(string[] args)
+        static void Main()
         {
             System.Console.WriteLine("OMGHAI!");
 
