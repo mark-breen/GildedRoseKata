@@ -82,7 +82,7 @@ namespace GildedRose.Console
 
         private void DecreaseQualityFor(ImprovedItem item)
         {
-            if (item.Quality > 0) item.Quality--;
+            item.DecreaseQuality();
         }
     }
 }

@@ -16,5 +16,10 @@
         {
             if (Quality < 50) Quality++;
         }
+
+        public void DecreaseQuality()
+        {
+            if (Quality > 0) Quality--;
+        }
     }
 }
