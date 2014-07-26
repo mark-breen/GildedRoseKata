@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GildedRose.Console
 {
@@ -39,15 +40,15 @@ namespace GildedRose.Console
         public void UpdateQuality()
         {
             foreach (var item in Items)
-            {
-                var improvedItem = item as ImprovedItem;
-                UpdateQualityFor(improvedItem);
-            }
+                UpdateQualityFor(item);
         }
 
-        public void UpdateQualityFor(ImprovedItem item)
+        public void UpdateQualityFor(Item item)
         {
-            item.UpdateQuality();
+            if (!(item is ImprovedItem))
+                throw new Exception("You must use an ImprovedItem!");
+
+            (item as ImprovedItem).UpdateQuality();
         }
     }
 }
