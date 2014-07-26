@@ -12,14 +12,16 @@
             Quality = quality;
         }
 
+        public abstract void UpdateQuality();
+
+        public bool IsExpired
+        {
+            get { return SellIn < 0; }
+        }
+
         public void DecreaseSellIn()
         {
             SellIn--;
-        }
-
-        public void DropQuality()
-        {
-            Quality = MinimumQuality;
         }
 
         public void IncreaseQuality()
@@ -27,16 +29,14 @@
             if (Quality < MaximumQuality) Quality++;
         }
 
+        public void DropQuality()
+        {
+            Quality = MinimumQuality;
+        }
+
         public void DecreaseQuality()
         {
             if (Quality > MinimumQuality) Quality--;
         }
-
-        public bool IsExpired
-        {
-            get { return SellIn < 0; }
-        }
-
-        public abstract void UpdateQuality();
     }
 }
