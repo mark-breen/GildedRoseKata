@@ -109,7 +109,7 @@ namespace GildedRose.Console
         {
             if (item.Quality < 50)
             {
-                item.Quality = item.Quality + 1;
+                item.Quality++;
             }
         }
 
