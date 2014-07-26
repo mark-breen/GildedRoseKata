@@ -79,7 +79,7 @@ namespace GildedRose.Console
 
         private void DecreaseSellInFor(ImprovedItem item)
         {
-            item.SellIn--;
+            item.DecreaseSellIn();
         }
 
         private void DropQualityFor(ImprovedItem item)
