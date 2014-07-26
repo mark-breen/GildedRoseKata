@@ -13,8 +13,8 @@
             Items = new List<Item>
             {
                 new NormalItem(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
-                new AgedBrie(sellIn: 2, quality: 0),
                 new NormalItem(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
+                new AgedBrie(sellIn: 2, quality: 0),
                 new Sulfuras(sellIn: 0, quality: 80),
                 new BackstagePasses(sellIn: 15, quality: 20),
                 new ConjuredItem(sellIn: 3, quality: 6)
