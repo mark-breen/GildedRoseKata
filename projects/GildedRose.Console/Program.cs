@@ -75,14 +75,9 @@ namespace GildedRose.Console
                 return;
             }
 
-            DecreaseQualityFor(item);
-            item.DecreaseSellIn();
-            if (item.SellIn < 0) DecreaseQualityFor(item);
-        }
-
-        private void DecreaseQualityFor(ImprovedItem item)
-        {
             item.DecreaseQuality();
+            item.DecreaseSellIn();
+            if (item.SellIn < 0) item.DecreaseQuality();
         }
     }
 }
