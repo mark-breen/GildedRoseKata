@@ -8,7 +8,7 @@ namespace GildedRose.Tests
     [TestFixture]
     class NormalItemTests : GildedRoseTests
     {
-        public override Item CreateItem(int sellIn, int quality)
+        public override ImprovedItem CreateItem(int sellIn, int quality)
         {
             return new NormalItem(name: "Normal Item", sellIn: sellIn, quality: quality);
         }
@@ -26,7 +26,7 @@ namespace GildedRose.Tests
     [TestFixture]
     class AgedBrieTests : GildedRoseTests
     {
-        public override Item CreateItem(int sellIn, int quality)
+        public override ImprovedItem CreateItem(int sellIn, int quality)
         {
             return new AgedBrie(sellIn: sellIn, quality: quality);
         }
@@ -44,7 +44,7 @@ namespace GildedRose.Tests
     [TestFixture]
     class SulfurasTests : GildedRoseTests
     {
-        public override Item CreateItem(int sellIn, int quality)
+        public override ImprovedItem CreateItem(int sellIn, int quality)
         {
             return new Sulfuras(sellIn: sellIn, quality: quality);
         }
@@ -59,7 +59,7 @@ namespace GildedRose.Tests
     [TestFixture]
     class BackstagePassesTests : GildedRoseTests
     {
-        public override Item CreateItem(int sellIn, int quality)
+        public override ImprovedItem CreateItem(int sellIn, int quality)
         {
             return new BackstagePasses(sellIn: sellIn, quality: quality);
         }
@@ -77,18 +77,11 @@ namespace GildedRose.Tests
 
     abstract class GildedRoseTests
     {
-        public abstract Item CreateItem(int sellIn, int quality);
+        public abstract ImprovedItem CreateItem(int sellIn, int quality);
 
         public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem, string message)
         {
-            message = message.ToUpper();
-            Assert.That(actualItem.SellIn,
-                Is.EqualTo(expectedItem.SellIn),
-                String.Format("\n{0}\nSellIn for {1}", message, expectedItem.Name));
-
-            Assert.That(actualItem.Quality,
-                Is.EqualTo(expectedItem.Quality),
-                String.Format("\n{0}\nQuality for {1}", message, expectedItem.Name));
+            Assert.That(actualItem, Is.EqualTo(expectedItem), message.ToUpper());
         }
 
         public void AssertThatQualityIsUpdated(int initialQuality, int expectedQuality,
