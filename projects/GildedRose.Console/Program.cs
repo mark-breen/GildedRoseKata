@@ -43,7 +43,7 @@ namespace GildedRose.Console
                 UpdateQualityFor(item);
         }
 
-        public void UpdateQualityFor(Item item)
+        public static void UpdateQualityFor(Item item)
         {
             if (!(item is ImprovedItem))
                 throw new Exception("You must use an ImprovedItem!");
