@@ -52,12 +52,14 @@ namespace GildedRose.Console
             if (item.Name == "Aged Brie")
             {
                 IncreaseQualityFor(item);
+                DecreaseSellInFor(item);
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 IncreaseQualityFor(item);
                 if (item.SellIn < 11) IncreaseQualityFor(item);
                 if (item.SellIn < 6) IncreaseQualityFor(item);
+                DecreaseSellInFor(item);
             }
             else if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
@@ -65,11 +67,6 @@ namespace GildedRose.Console
             else
             {
                 DecreaseQualityFor(item);
-            }
-
-
-            if (item.Name != "Sulfuras, Hand of Ragnaros")
-            {
                 DecreaseSellInFor(item);
             }
 
