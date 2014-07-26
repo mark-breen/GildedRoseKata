@@ -11,7 +11,7 @@ namespace GildedRose.Console
         static void Main()
         {
             AddItemsToInventory();
-            UpdateQuality();
+            UpdateQualityForAllItemsInInventory();
             Console.ReadKey();
         }
 
@@ -28,7 +28,7 @@ namespace GildedRose.Console
             };
         }
 
-        public static void UpdateQuality()
+        public static void UpdateQualityForAllItemsInInventory()
         {
             foreach (var item in Items)
                 UpdateQualityFor(item);
