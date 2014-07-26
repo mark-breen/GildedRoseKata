@@ -8,8 +8,6 @@
         static IList<Item> Items;
         static void Main()
         {
-            Console.WriteLine("OMGHAI!");
-
             Items = new List<Item>
             {
                 new NormalItem(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
