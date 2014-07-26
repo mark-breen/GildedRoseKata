@@ -10,6 +10,13 @@ namespace GildedRose.Console
         static IList<Item> Items;
         static void Main()
         {
+            AddItemsToInventory();
+            UpdateQuality();
+            Console.ReadKey();
+        }
+
+        private static void AddItemsToInventory()
+        {
             Items = new List<Item>
             {
                 new NormalItem(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
@@ -19,10 +26,6 @@ namespace GildedRose.Console
                 new BackstagePasses(sellIn: 15, quality: 20),
                 new ConjuredItem(sellIn: 3, quality: 6)
             };
-
-            UpdateQuality();
-
-            Console.ReadKey();
         }
 
         public static void UpdateQuality()
