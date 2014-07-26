@@ -78,11 +78,6 @@ namespace GildedRose.Tests
     {
         public abstract Item CreateItem(int sellIn, int quality);
 
-        public void UpdateQualityFor(Item item)
-        {
-            new Program(item).UpdateQuality();
-        }
-
         public void AssertThatItemsAreEqual(Item actualItem, Item expectedItem, string message)
         {
             message = message.ToUpper();
@@ -100,7 +95,7 @@ namespace GildedRose.Tests
         {
             var item = CreateItem(initialSellIn, initialQuality);
 
-            UpdateQualityFor(item);
+            Program.UpdateQualityFor(item);
 
             var expectedItem = CreateItem(expectedSellIn, expectedQuality);
             AssertThatItemsAreEqual(item, expectedItem, message);
