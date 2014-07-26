@@ -58,7 +58,7 @@ namespace GildedRose.Console
             {
                 item.IncreaseQuality();
                 item.DecreaseSellIn();
-                if (item.SellIn < 0) item.IncreaseQuality();
+                if (IsExpired(item)) item.IncreaseQuality();
                 return;
             }
 
@@ -68,13 +68,18 @@ namespace GildedRose.Console
                 if (item.SellIn < 11) item.IncreaseQuality();
                 if (item.SellIn < 6) item.IncreaseQuality();
                 item.DecreaseSellIn();
-                if (item.SellIn < 0) item.DropQuality();
+                if (IsExpired(item)) item.DropQuality();
                 return;
             }
 
             item.DecreaseQuality();
             item.DecreaseSellIn();
-            if (item.SellIn < 0) item.DecreaseQuality();
+            if (IsExpired(item)) item.DecreaseQuality();
+        }
+
+        private bool IsExpired(ImprovedItem item)
+        {
+            return item.SellIn < 0;
         }
     }
 }
