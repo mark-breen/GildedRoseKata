@@ -44,10 +44,13 @@ namespace GildedRose.Console
         public void UpdateQuality()
         {
             foreach (var item in Items)
-                UpdateQualityFor(item);
+            {
+                var improvedItem = item as ImprovedItem;
+                UpdateQualityFor(improvedItem);
+            }
         }
 
-        public void UpdateQualityFor(Item item)
+        public void UpdateQualityFor(ImprovedItem item)
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros") return;
 
