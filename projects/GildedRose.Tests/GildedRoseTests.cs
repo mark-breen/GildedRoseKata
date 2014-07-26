@@ -45,7 +45,7 @@ namespace GildedRose.Tests
     {
         public override Item CreateItem(int sellIn, int quality)
         {
-            return new ImprovedItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellIn, Quality = quality };
+            return new Sulfuras(sellIn: sellIn, quality: quality);
         }
 
         [TestCase(20, 20, 10, 10, "quality and sell in always stay the same")]

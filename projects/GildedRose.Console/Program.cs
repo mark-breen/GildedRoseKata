@@ -16,7 +16,7 @@ namespace GildedRose.Console
                                               new ImprovedItem {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                                               new ImprovedItem {Name = "Aged Brie", SellIn = 2, Quality = 0},
                                               new ImprovedItem {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                                              new ImprovedItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                                              new Sulfuras(sellIn: 0, quality: 80),
                                               new ImprovedItem
                                                   {
                                                       Name = "Backstage passes to a TAFKAL80ETC concert",
