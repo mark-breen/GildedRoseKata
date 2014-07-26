@@ -79,7 +79,7 @@ namespace GildedRose.Console
 
         private void DropQualityFor(ImprovedItem item)
         {
-            item.Quality = 0;
+            item.DropQuality();
         }
 
         private void IncreaseQualityFor(ImprovedItem item)

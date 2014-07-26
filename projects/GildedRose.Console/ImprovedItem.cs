@@ -6,5 +6,10 @@
         {
             SellIn--;
         }
+
+        public void DropQuality()
+        {
+            Quality = 0;
+        }
     }
 }
