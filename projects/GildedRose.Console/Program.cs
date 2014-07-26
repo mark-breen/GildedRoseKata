@@ -52,6 +52,8 @@ namespace GildedRose.Console
 
         public void UpdateQualityFor(ImprovedItem item)
         {
+            item.UpdateQuality();
+
             if (item.Name == "Sulfuras, Hand of Ragnaros") return;
 
             if (item.Name == "Aged Brie")

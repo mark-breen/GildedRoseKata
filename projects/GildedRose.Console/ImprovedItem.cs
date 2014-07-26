@@ -35,5 +35,7 @@
         {
             get { return SellIn < 0; }
         }
+
+        public void UpdateQuality() { }
     }
 }
