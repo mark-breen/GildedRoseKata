@@ -16,6 +16,7 @@ namespace GildedRose.Tests
         [Given]
         public void GivenTheOriginalInventoryData()
         {
+            // NOTE: I've removed conjured mana cake, as this is the new feature
             _items = new List<Item>
             {
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
@@ -27,8 +28,7 @@ namespace GildedRose.Tests
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 15,
                     Quality = 20
-                },
-                new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                }
             };
         }
 

@@ -4,9 +4,9 @@ namespace GildedRose.App
 {
     public class InventoryService
     {
-        public void Update()
+        public void UpdateItem(string name, int sellIn, int quality)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
