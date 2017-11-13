@@ -163,4 +163,42 @@ namespace GildedRose.Tests.ApplicationTests
             Assert.That(inventoryItem.Quality, Is.EqualTo(expectedQuality));
         }
     }
+
+    [TestFixture]
+    public class Sulfuras
+    {
+        [TestCase(0, 0, 80, 80)]
+        public void WhenTheItemIsUpdated(int originalSellIn, int expectedSellIn, int originalQuality, int expectedQuality)
+        {
+            var sut = new InventoryService();
+
+            var inventoryItem = sut.UpdateItem("Sulfuras, Hand of Ragnaros", originalSellIn, originalQuality);
+
+            Assert.That(inventoryItem.Name, Is.EqualTo("Sulfuras, Hand of Ragnaros"));
+            Assert.That(inventoryItem.SellIn, Is.EqualTo(expectedSellIn));
+            Assert.That(inventoryItem.Quality, Is.EqualTo(expectedQuality));
+        }
+    }
+
+    [TestFixture]
+    public class BackstagePasses
+    {
+        [TestCase(20, 19, 10, 11)]
+        [TestCase(11, 10, 10, 11)]
+        [TestCase(10, 9, 10, 12)]
+        [TestCase(6, 5, 10, 12)]
+        [TestCase(5, 4, 10, 13)]
+        [TestCase(1, 0, 10, 13)]
+        [TestCase(0, -1, 10, 0)]
+        public void WhenTheItemIsUpdated(int originalSellIn, int expectedSellIn, int originalQuality, int expectedQuality)
+        {
+            var sut = new InventoryService();
+
+            var inventoryItem = sut.UpdateItem("Backstage passes to a TAFKAL80ETC concert", originalSellIn, originalQuality);
+
+            Assert.That(inventoryItem.Name, Is.EqualTo("Backstage passes to a TAFKAL80ETC concert"));
+            Assert.That(inventoryItem.SellIn, Is.EqualTo(expectedSellIn));
+            Assert.That(inventoryItem.Quality, Is.EqualTo(expectedQuality));
+        }
+    }
 }
