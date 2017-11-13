@@ -12,6 +12,7 @@ namespace GildedRose.Console
             Items = items;
         }
 
+        // ReSharper disable once UnusedParameter.Local
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
