@@ -56,7 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationTests\StandardItemTests.cs" />
+    <Compile Include="ApplicationTests\ConjuredItemTests.cs" />
     <Compile Include="ApprovalTestsInventoryServiceClient.cs" />
     <Compile Include="BenchmarkTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
