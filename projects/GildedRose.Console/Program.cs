@@ -3,9 +3,15 @@ using GildedRose.App;
 
 namespace GildedRose.Console
 {
-    class Program
+    public class Program
     {
         IList<Item> Items;
+
+        public Program(IList<Item> items)
+        {
+            Items = items;
+        }
+
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
@@ -25,10 +31,7 @@ namespace GildedRose.Console
                 new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new Program()
-            {
-                Items = items
-            };
+            var app = new Program(items);
 
             app.UpdateQuality(items, new NullInventoryServiceClient());
 
@@ -36,7 +39,7 @@ namespace GildedRose.Console
 
         }
 
-        public void UpdateQuality(List<Item> items, NullInventoryServiceClient nullInventoryServiceClient)
+        public void UpdateQuality(List<Item> items, IInventoryServiceClient nullInventoryServiceClient)
         {
             for (var i = 0; i < Items.Count; i++)
             {
@@ -109,6 +112,8 @@ namespace GildedRose.Console
                         }
                     }
                 }
+                var item = Items[i];
+                nullInventoryServiceClient.ItemUpdated(item.Name, item.SellIn, item.Quality);
             }
         }
 
