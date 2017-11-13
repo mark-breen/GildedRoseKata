@@ -43,13 +43,13 @@ namespace GildedRose.Console
 
         }
 
-        public void UpdateQuality(List<Item> items, IInventoryServiceClient nullInventoryServiceClient)
+        public void UpdateQuality(List<Item> items, IInventoryServiceClient inventoryServiceClient)
         {
             for (var i = 0; i < Items.Count; i++)
             {
                 var item = Items[i];
                 var updatedItem = _inventoryService.UpdateItem(item.Name, item.SellIn, item.Quality);
-                nullInventoryServiceClient.ItemUpdated(updatedItem.Name, updatedItem.SellIn, updatedItem.Quality);
+                inventoryServiceClient.ItemUpdated(updatedItem.Name, updatedItem.SellIn, updatedItem.Quality);
             }
         }
 

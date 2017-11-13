@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTestsInventoryServiceClient.cs" />
-    <Compile Include="GildedRoseTests.cs" />
+    <Compile Include="BenchmarkTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

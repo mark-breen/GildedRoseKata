@@ -1,0 +1,1 @@
+﻿Name: 'SomeStandardItem'; SellIn: '-1'; Quality: '2'
