@@ -9,6 +9,7 @@ namespace GildedRose.App
         {
             { "Aged Brie", new QualityLimitedIncreasingQualityStrategy() },
             { "Backstage passes to a TAFKAL80ETC concert", new TimeLimitedIncreasingQualityStrategy() },
+            { "Conjured Mana Cake", new ConjuredItemUpdateStrategy() },
             { "Sulfuras, Hand of Ragnaros", new LegendaryItemStrategy() },
         };
 
@@ -27,9 +28,9 @@ namespace GildedRose.App
 
     public class InventoryItem
     {
-        public string Name { get; set; }
-        public int SellIn { get; set; }
-        public int Quality { get; set; }
+        public string Name { get; }
+        public int SellIn { get; }
+        public int Quality { get; }
 
         public InventoryItem(string name, int sellIn, int quality)
         {

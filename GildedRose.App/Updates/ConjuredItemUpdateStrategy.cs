@@ -1,14 +1,14 @@
 ﻿namespace GildedRose.App.Updates
 {
-    internal class StandardItemUpdateStrategy : IUpdateStrategy
+    internal class ConjuredItemUpdateStrategy : IUpdateStrategy
     {
         public InventoryItem Update(InventoryItem inventoryItem)
         {
             var sellIn = inventoryItem.SellIn - 1;
 
             var qualityDegradation = sellIn < 0
-                ? 2
-                : 1;
+                ? 4
+                : 2;
 
             var quality = inventoryItem.Quality - qualityDegradation;
             if (quality < 0)

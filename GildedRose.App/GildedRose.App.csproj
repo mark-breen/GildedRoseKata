@@ -43,6 +43,7 @@
     <Compile Include="IInventoryServiceClient.cs" />
     <Compile Include="InventoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Updates\ConjuredItemUpdateStrategy.cs" />
     <Compile Include="Updates\IUpdateStrategy.cs" />
     <Compile Include="Updates\LegendaryItemStrategy.cs" />
     <Compile Include="Updates\QualityLimitedIncreasingQualityStrategy.cs" />
