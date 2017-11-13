@@ -8,8 +8,12 @@ namespace GildedRose.App
         private readonly HashSet<string> _nonRefactoredItems = new HashSet<string>
         {
             "Aged Brie",
-            "Backstage passes to a TAFKAL80ETC concert",
-            "Sulfuras, Hand of Ragnaros"
+            "Backstage passes to a TAFKAL80ETC concert"
+        };
+
+        private readonly Dictionary<string, IUpdateStrategy> _nonStandardUpdateStrategies = new Dictionary<string, IUpdateStrategy>
+        {
+            { "Sulfuras, Hand of Ragnaros", new LegendaryItemStrategy() }
         };
 
         public InventoryItem UpdateItem(string name, int sellIn, int quality)
@@ -19,6 +23,11 @@ namespace GildedRose.App
             if (_nonRefactoredItems.Contains(inventoryItem.Name))
             {
                 return LegacyUpdateMethod(inventoryItem);
+            }
+
+            if (_nonStandardUpdateStrategies.ContainsKey(inventoryItem.Name))
+            {
+                return _nonStandardUpdateStrategies[inventoryItem.Name].Update(inventoryItem);
             }
 
             return new StandardItemUpdateStrategy().Update(inventoryItem);
