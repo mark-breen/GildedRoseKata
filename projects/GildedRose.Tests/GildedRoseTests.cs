@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ApprovalTests;
 using ApprovalTests.Reporters;
+using GildedRose.App;
 using GildedRose.Console;
 using NUnit.Framework;
 using TestStack.BDDfy;
@@ -37,7 +38,7 @@ namespace GildedRose.Tests
         {
             _approvalTestsInventoryServiceClient = new ApprovalTestsInventoryServiceClient();
 
-            var sut = new Program(_items);
+            var sut = new Program(_items, new InventoryService());
 
             sut.UpdateQuality(_items, _approvalTestsInventoryServiceClient);
         }
