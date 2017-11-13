@@ -355,12 +355,17 @@ namespace GildedRose.Tests
     public class BackstagePasses
     {
         [TestCase(20, 19, 10, 11)]
+        [TestCase(20, 19, 50, 50)]
         [TestCase(11, 10, 10, 11)]
         [TestCase(10, 9, 10, 12)]
+        [TestCase(10, 9, 50, 50)]
         [TestCase(6, 5, 10, 12)]
         [TestCase(5, 4, 10, 13)]
+        [TestCase(5, 4, 50, 50)]
         [TestCase(1, 0, 10, 13)]
+        [TestCase(1, 0, 50, 50)]
         [TestCase(0, -1, 10, 0)]
+        [TestCase(0, -1, 50, 0)]
         public void WhenTheItemIsUpdated(int originalSellIn, int expectedSellIn, int originalQuality, int expectedQuality)
         {
             var sut = new InventoryService();

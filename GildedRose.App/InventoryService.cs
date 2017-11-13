@@ -7,12 +7,12 @@ namespace GildedRose.App
     {
         private readonly HashSet<string> _nonRefactoredItems = new HashSet<string>
         {
-            "Backstage passes to a TAFKAL80ETC concert"
         };
 
         private readonly Dictionary<string, IUpdateStrategy> _nonStandardUpdateStrategies = new Dictionary<string, IUpdateStrategy>
         {
             { "Aged Brie", new QualityLimitedIncreasingQualityStrategy() },
+            { "Backstage passes to a TAFKAL80ETC concert", new TimeLimitedIncreasingQualityStrategy() },
             { "Sulfuras, Hand of Ragnaros", new LegendaryItemStrategy() },
         };
 
